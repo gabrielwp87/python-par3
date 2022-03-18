@@ -46,6 +46,9 @@ vingadores.dar_likes()
 atlanta.dar_likes()
 atlanta.dar_likes()
 
+listinha = [atlanta, vingadores]
 
-print(f'Nome: {vingadores.nome} = Likes: {vingadores.likes}')
-print(f'Nome: {atlanta.nome} - Likes: {atlanta.likes}')
+for programa in listinha:
+    print(f'Nome: {programa.nome} - Likes: {programa.likes}')
+
+
