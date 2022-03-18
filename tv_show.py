@@ -49,6 +49,10 @@ atlanta.dar_likes()
 listinha = [atlanta, vingadores]
 
 for programa in listinha:
-    print(f'Nome: {programa.nome} - Likes: {programa.likes}')
+    if hasattr(programa, 'duracao'):
+        detalhe = f'{programa.duracao} min'
+    else:
+        detalhe = f'{programa.temporadas} temporadas'
 
-
+    print(f'Nome: {programa.nome} - {detalhe} - Likes: {programa.likes}')
+    
