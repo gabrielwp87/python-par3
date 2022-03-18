@@ -20,20 +20,26 @@ class Programa:
     def nome(self, nome):
         self._nome = nome
 
+    def imprime(self):
+        print(f'Nome: {self.nome} Likes: {self.likes}')        
+        
         
 class Filme(Programa):
     def __init__(self, nome, ano, duracao):
         super().__init__(nome, ano) #usa os atributos da classe mãe
         self.duracao = duracao
-
+        
+    def imprime(self):
+        print(f'Nome: {self.nome} - {self.duracao} min - Likes: {self.likes}')
 
 
 class Serie(Programa):
     def __init__(self, nome, ano, temporadas):
         super().__init__(nome, ano) #usa os atributos da classe mãe
         self.temporadas = temporadas
-
-
+   
+    def imprime(self):
+        print(f'Nome: {self.nome} - {self.temporadas} min - Likes: {self.likes}')
 
 
 vingadores = Filme("vingadores - guerra infinita", 2018, 160)
@@ -49,10 +55,5 @@ atlanta.dar_likes()
 listinha = [atlanta, vingadores]
 
 for programa in listinha:
-    if hasattr(programa, 'duracao'):
-        detalhe = f'{programa.duracao} min'
-    else:
-        detalhe = f'{programa.temporadas} temporadas'
-
-    print(f'Nome: {programa.nome} - {detalhe} - Likes: {programa.likes}')
+    programa.imprime()
     
